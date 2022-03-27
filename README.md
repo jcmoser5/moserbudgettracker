@@ -12,13 +12,13 @@ Update of an existing budger tracker application to allow for offline access and
 
 ## Screenshots
 
-![Screenshot]()
+![Screenshot](https://github.com/jcmoser5/moserbudgettracker/blob/main/assets/screenshot.PNG)
 
 ## Usage
 
 Install with npm install, then run npm start
 
-See the [deployed app here]().
+See the [deployed app here](https://damp-meadow-56554.herokuapp.com/).
 
 ## License
 Licensed under the MIT license.
