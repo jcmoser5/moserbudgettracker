@@ -4,7 +4,9 @@ const CACHE_NAME = APP_PREFIX + VERSION;
 const FILES_TO_CACHE = [
   './',
   './index.html',
+  './manifest.json',
   '/js/index.js',
+  '/js/idb.js',
   '/css/styles.css',
   '/icons/icon-72x72.png',
   '/icons/icon-96x96.png',
@@ -56,7 +58,9 @@ self.addEventListener('fetch', function(e) {
       console.log(`file is not cached, fetching : ${e.request.url}`);
       fetch(e.request).then(response => {
         if (response.status === 200) {
-          cache.put(e.request.url, response.clone());
+          caches.open(CACHE_NAME).then(cache => {
+            cache.put(e.request.url, response.clone());
+          });
         }
         return response;
       });
